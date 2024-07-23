@@ -1,0 +1,21 @@
+print("Marvel Movie Character Creator")
+print("--------------------------------")
+print("Lets find out if you are a marvel superhero or not!") 
+print()
+print("To answer the questions press y for yes and n for no:")
+print()
+mySpiderman=input("Do you like hanging upsidedown?")
+if mySpiderman=="y":
+  print("Then you are Spiderman!")
+else:
+  print("Then you're not spiderman...")
+  myThor=input("Do you like getting struck by lightning?!")
+  if myThor=="y":
+    print("Then you are Thor!")
+  else:
+    print("then you're not Thor...")
+    myCaptainMarvel=input("Do you feel 'Marvelous!'")
+    if myCaptainMarvel=="y":
+      print("You are Captain Marvel!")
+    else:
+      print("welp. you probably aren't a superhero...sorry!")
