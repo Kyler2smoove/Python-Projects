@@ -1,0 +1,21 @@
+Creating my own Log-in Program
+-----
+print("Please type your Username and Passcode...")
+print("-----------------------------")
+myUsername=input("What is your username?")
+if myUsername==("Kyler"):
+  print("Hey Master! What is your passcode?")
+  myPasscode=input("Passcode:")
+  if myPasscode==("Williams"):
+    print("YES! You are the Master!")
+  else:
+    print("nada")
+elif myUsername==("no one"):
+  print("Hey, who are you? Whats the passcode?")
+  myPasscode=input("Passcode:")
+  if myPasscode==("i dont know"):
+    print("Why am i not suprised... go away.")
+  else:
+    print("Nope!")
+else:
+  print("wrong answer")
