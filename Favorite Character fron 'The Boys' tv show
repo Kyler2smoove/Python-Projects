@@ -1,0 +1,23 @@
+print("Favorite Character from the Boys!")
+print("---------------------------------")
+favCharacter = input("Who is your facorite character from 'The Boys!?'")
+if favCharacter == "Billy Butcher":
+  print("Yea hes is so badass!")
+  favAttribute = input("What's your favorite thing about him?")
+  if favAttribute == "his hair":
+    print("Yea it's so stylish!")
+  elif favAttribute == "his personality":
+    print("Yea i wish i could be more like him!")
+  else:
+    print("Yea i understand that!")
+elif favCharacter == "Queen Maeve":
+  print("I Love Her!")
+  favAttribute = input("What's your favorite thing about her?")
+  if favAttribute == "her hair":
+    print("Yea her hair is GORGEOUS!")
+  elif favAttribute == "her personality":
+    print("Yea she is such a badass woman!")
+  else:
+    print("Great to hear!")
+else:
+  print("ok cool")
