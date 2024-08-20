@@ -1,0 +1,41 @@
+print("Hello. Welcome to your daily affirmation generator.")
+name = input("What is your name?").lower().capitalize()
+#define dicitionary to map lowercase to capitalized versions
+DOW_capitalized = {
+  "monday" : "Monday",
+  "tuesday" : "Tuesday",
+  "wednesday" : "Wednesday",
+  "thursday" : "Thursday",
+  "friday" : "Friday",
+}
+
+if name == "Kyler":
+  DOW = input("What is the day of the week?").lower()
+  #Instead of directly using DOW_capitalized in the f-string, you should use the variable DOW_formatted, which retrieves the correctly capitalized day from the dictionary
+  DOW_formatted = DOW_capitalized.get(DOW)
+  if DOW_formatted:
+    if DOW == "monday":
+      print(f"It is going to be a great {DOW_formatted},", name)
+    elif DOW == "tuesday":
+      print(f"What a wonderful {DOW_formatted}, it is", name)
+    elif DOW == "wednesday":
+      print("Happy Hump Day",name)
+    elif DOW == "thursday":
+      print(name,"your week is almost over!")
+    elif DOW == "friday":
+      print(name,f"It's {DOW_formatted},!")
+
+elif name == "Asa":
+  DOW = input("What is the day of the week?")
+  if DOW == "monday":
+    print("It is going to be a fantastic Monday",name)
+  if DOW == "tuesday":
+    print("Have a great Tuesday",name)
+  if DOW == "Wednesday":
+    print("Happy Hump Day",name)
+  if DOW == "thursday":
+    print(name,"your week is just about over!")
+  if DOW == "friday":
+    print(name, "it's FRIDAY!!!")
+else:
+  print("I do not know your name, but I hope you are having a great day!")
