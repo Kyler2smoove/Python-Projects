@@ -1,0 +1,54 @@
+import requests
+import json
+
+#Azure AD app registration details
+tenant_id = 'b5375752-hiding-part-of-it-1252f200'
+client_id = 'beded5b0-hiding-part-of-it)a0d351a'
+client_secret = 'vkC8Q~hiding-part-of-it-uU6Nm5bTA'
+authority = f'https://login.microsoftonline.com/{tenant_id}'
+token_url = f'{authority}/oauth2/v2.0/token'
+graph_api_url = 'https://graph.microsoft.com/v1.0/users'
+
+#Get an access token
+def get_access_token():
+    headers = {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    }
+    data = {
+        'grant_type': 'client_credentials',
+        'client_id': client_id,
+        'client_secret': client_secret,
+        'scope': 'https://graph.microsoft.com/.default'
+    }
+    response = requests.post(token_url, headers=headers, data=data)
+    response.raise_for_status()
+    return response.json()['access_token']
+
+# Create a user in Azure AD
+def create_user(access_token, user_number):
+    headers = {
+        'Authorization': f'Bearer {access_token}',
+        'Content-Type': 'application/json'
+    }
+    user_data = {
+        "accountEnabled": True,
+        "displayName": f"User{user_number}",
+        "mailNickname": f"User{user_number}",
+        "userPrincipalName": f"user{user_number}@kylerawilliamshotmail.onmicrosoft.com",
+        "passwordProfile": {
+            "forceChangePasswordNextSignIn": True,
+            "password": "teki712044!"
+        }
+    }
+    response = requests.post(graph_api_url, headers=headers, json=user_data)
+    response.raise_for_status()
+    return response.json()
+
+def main():
+    access_token = get_access_token()
+    for i in range (1,1001):
+      user = create_user(access_token, i)
+      print(f'Created user: {user["userPrincipalName"]}')
+
+if __name__ == '__main__':
+    main()  
